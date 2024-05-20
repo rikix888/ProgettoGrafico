@@ -1,2 +1,4 @@
 # ProgettoGrafico
-Programmazione di un gioco
+
+Programmazione di un gioco per informatica
+
