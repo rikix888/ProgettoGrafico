@@ -129,7 +129,6 @@
   <ItemGroup>
     <ClCompile Include="Ccerchio.cpp" />
     <ClCompile Include="CVettCerchi.cpp" />
-    <ClCompile Include="giocoDino.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Punto.cpp" />
     <ClCompile Include="Rettangolo.cpp" />
@@ -137,7 +136,6 @@
   <ItemGroup>
     <ClInclude Include="Ccerchio.h" />
     <ClInclude Include="CVettCerchi.h" />
-    <ClInclude Include="giocoDino.h" />
     <ClInclude Include="immediate2d.h" />
     <ClInclude Include="Punto.h" />
     <ClInclude Include="Rettangolo.h" />

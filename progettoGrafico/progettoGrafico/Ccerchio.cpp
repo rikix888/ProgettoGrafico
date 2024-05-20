@@ -21,7 +21,7 @@ void Ccerchio::set(Punto punti, int raggio, Color colore)
 }
 void Ccerchio::disegnaTastiera()
 {
-	DrawCircle(punti.x, punti.y, raggio, colore, Yellow);
+	DrawCircle(punti.x, punti.y, raggio, colore, Blue);
 
 
 }

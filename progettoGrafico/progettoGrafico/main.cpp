@@ -6,23 +6,20 @@
 #include "immediate2d.h"
 #include "Rettangolo.h"
 #include "CVettCerchi.h"
-#include "giocoDino.h"
 
-CVettCerchi tastiera = { Ccerchio(Punto(400, 780), 50, Blue) , Ccerchio(Punto(500, 780), 50, Blue), Ccerchio(Punto(600, 780), 50, Blue), Ccerchio(Punto(700, 780), 50, Blue) };
+CVettCerchi tastiera = { Ccerchio(Punto(400, 780), 50, White) , Ccerchio(Punto(500, 780), 50, White), Ccerchio(Punto(600, 780), 50, White), Ccerchio(Punto(700, 780), 50, White) };
 CVettCerchi vett1 = { Ccerchio(Punto(400, 100), 50, Red) , Ccerchio(Punto(500, 100), 50, Red), Ccerchio(Punto(600, 100), 50, Red), Ccerchio(Punto(700, 100), 50, Red)};
 CVettCerchi vett2 = { Ccerchio(Punto(400, 100), 50, Red),Ccerchio(Punto(600, 100), 50, Red) };
 CVettCerchi vett3 = { Ccerchio(Punto(700, 100), 50, Red) };
 
 void run() {
 	
-	srand(time(NULL));
+
 	
 
 
-giocoDino gioco;
-	gioco.avvio();
 
-	/** 
+
 	int cont = 0;
 	while (true)
 	{
@@ -64,7 +61,7 @@ giocoDino gioco;
 
 		
 	}
-	*/
+
 
 
 
