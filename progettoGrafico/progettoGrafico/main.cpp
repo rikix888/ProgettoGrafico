@@ -4,10 +4,10 @@
 
 #define IMM2D_IMPLEMENTATION
 #include "immediate2d.h"
-#include "Rettangolo.h"
 #include "CVettCerchi.h"
+#include "CTastiera.h"
 
-CVettCerchi tastiera = { Ccerchio(Punto(400, 780), 50, White) , Ccerchio(Punto(500, 780), 50, White), Ccerchio(Punto(600, 780), 50, White), Ccerchio(Punto(700, 780), 50, White) };
+CTastiera tastiera;
 CVettCerchi vett1 = { Ccerchio(Punto(400, 100), 50, Red) , Ccerchio(Punto(500, 100), 50, Red), Ccerchio(Punto(600, 100), 50, Red), Ccerchio(Punto(700, 100), 50, Red)};
 CVettCerchi vett2 = { Ccerchio(Punto(400, 100), 50, Red),Ccerchio(Punto(600, 100), 50, Red) };
 CVettCerchi vett3 = { Ccerchio(Punto(700, 100), 50, Red) };
@@ -24,7 +24,7 @@ void run() {
 	while (true)
 	{
 		
-		tastiera.disegnaTast();
+		tastiera.disegnaTastiera();
 		vett1.disegna(); 
 		vett1.aggY();
 		
@@ -44,16 +44,16 @@ void run() {
 		const char key = LastKey();
 		if (key == 'q') {
 
-			
+			tastiera.cambiaColore(0);
 		}
 		if (key == 'w') {
-		
+			tastiera.cambiaColore(1);
 		}
 		if (key == 'o') {
-		
+			tastiera.cambiaColore(2);
 		}
 		if (key == 'p') {
-			
+			tastiera.cambiaColore(3);
 		}
 	  
 		Wait(18);

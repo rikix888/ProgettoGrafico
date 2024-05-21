@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="Rettangolo.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
     <ClCompile Include="Punto.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
@@ -30,12 +27,12 @@
     <ClCompile Include="CVettCerchi.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="CTastiera.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="immediate2d.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Rettangolo.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="Punto.h">
@@ -45,6 +42,9 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="CVettCerchi.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="CTastiera.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

@@ -64,7 +64,7 @@ void CVettCerchi::disegnaTast()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		vett[i].disegnaTastiera();
+		vett[i].disegnaCerchioTastiera();
 	}
 }
 
@@ -72,6 +72,6 @@ void CVettCerchi::disegna()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		vett[i].disegnati();
+		vett[i].disegnaCerchi();
 	}
 }

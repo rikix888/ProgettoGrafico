@@ -128,17 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ccerchio.cpp" />
+    <ClCompile Include="CTastiera.cpp" />
     <ClCompile Include="CVettCerchi.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Punto.cpp" />
-    <ClCompile Include="Rettangolo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ccerchio.h" />
+    <ClInclude Include="CTastiera.h" />
     <ClInclude Include="CVettCerchi.h" />
     <ClInclude Include="immediate2d.h" />
     <ClInclude Include="Punto.h" />
-    <ClInclude Include="Rettangolo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
