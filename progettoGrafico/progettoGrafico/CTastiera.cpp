@@ -1,4 +1,5 @@
 #include "CTastiera.h"
+#include <chrono>
 
 CTastiera::CTastiera()
 {
@@ -8,11 +9,21 @@ CTastiera::CTastiera()
 	tastiera[3] = Ccerchio(Punto(700, 780), 50, White);
 }
 
+uint64_t timeSinceEpochMillisec() {
+	using namespace std::chrono;
+	return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+}
+
+
+
 void CTastiera::cambiaColore(int pos)
 {
+	uint64_t currentTime = timeSinceEpochMillisec();
+	
+	 
 	tastiera[pos].setColore(LightBlue);
 	tastiera[pos].disegnaCerchioTastiera();
-	Wait(100);
+
 	tastiera[pos].setColore(White);
 	tastiera[pos].disegnaCerchioTastiera();
 

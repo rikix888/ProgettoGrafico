@@ -1,5 +1,6 @@
 #pragma once
 #include "Ccerchio.h"
+#include <ctime>
 class CTastiera
 {
 private:

@@ -6,6 +6,8 @@
 #include "immediate2d.h"
 #include "CVettCerchi.h"
 #include "CTastiera.h"
+#include <ctime>
+#include <string>
 
 CTastiera tastiera;
 CVettCerchi vett1 = { Ccerchio(Punto(400, 100), 50, Red) , Ccerchio(Punto(500, 100), 50, Red), Ccerchio(Punto(600, 100), 50, Red), Ccerchio(Punto(700, 100), 50, Red)};
@@ -14,15 +16,13 @@ CVettCerchi vett3 = { Ccerchio(Punto(700, 100), 50, Red) };
 
 void run() {
 	
-
-	
-
-
-
-
+	std::string tmp="";
 	int cont = 0;
 	while (true)
 	{
+	time_t currentTime;
+	long ora=time(&currentTime);
+
 		
 		tastiera.disegnaTastiera();
 		vett1.disegna(); 
@@ -31,18 +31,18 @@ void run() {
 		cont++;
 		if (cont > 140) {
 			vett2.disegna();
-		
 			vett2.aggY();
 			
 		}
 		if (cont > 270) {
 			vett3.disegna();
-		
 			vett3.aggY();
 		
 		}
-		const char key = LastKey();
-		if (key == 'q') {
+		
+		char const key = LastKey();
+
+		if (key == 'q') { 
 
 			tastiera.cambiaColore(0);
 		}
