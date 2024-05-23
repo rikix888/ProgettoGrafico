@@ -4,9 +4,13 @@
 CTastiera::CTastiera()
 {
 	tastiera[0] = Ccerchio(Punto(400, 780), 50, White);
-	tastiera[1] = Ccerchio(Punto(500, 780), 50, White);
-	tastiera[2] = Ccerchio(Punto(600, 780), 50, White);
-	tastiera[3] = Ccerchio(Punto(700, 780), 50, White);
+	tastiera[1] = Ccerchio(Punto(525, 780), 50, White);
+	tastiera[2] = Ccerchio(Punto(650, 780), 50, White);
+	tastiera[3] = Ccerchio(Punto(775, 780), 50, White);
+
+	for (int i = 0; i < 4; i++) {
+		tempo[i] = 0;
+	}
 }
 
 uint64_t timeSinceEpochMillisec() {
@@ -18,21 +22,25 @@ uint64_t timeSinceEpochMillisec() {
 
 void CTastiera::cambiaColore(int pos)
 {
-	uint64_t currentTime = timeSinceEpochMillisec();
-	
-	 
+	tempo[pos] = timeSinceEpochMillisec(); 
 	tastiera[pos].setColore(LightBlue);
-	tastiera[pos].disegnaCerchioTastiera();
-
-	tastiera[pos].setColore(White);
-	tastiera[pos].disegnaCerchioTastiera();
-
 }
 
+void CTastiera::aggiornaColori()
+{
+	uint64_t currentTime = timeSinceEpochMillisec();
+	for (int i = 0; i < 4; i++) {
+		if (tempo[i] != 0 && (currentTime - tempo[i]) >= 150) { 
+			tastiera[i].setColore(White);
+			tempo[i] = 0;
+		}
+	}
+}
 
 
 void CTastiera::disegnaTastiera()
 {
+	aggiornaColori();
 	for (int i = 0; i < 4; i++)
 	{
 		tastiera[i].disegnaCerchioTastiera();

@@ -6,26 +6,26 @@
 #include "immediate2d.h"
 #include "CVettCerchi.h"
 #include "CTastiera.h"
-#include <ctime>
+#include "CRiquadro.h"
 #include <string>
 
 CTastiera tastiera;
-CVettCerchi vett1 = { Ccerchio(Punto(400, 100), 50, Red) , Ccerchio(Punto(500, 100), 50, Red), Ccerchio(Punto(600, 100), 50, Red), Ccerchio(Punto(700, 100), 50, Red)};
-CVettCerchi vett2 = { Ccerchio(Punto(400, 100), 50, Red),Ccerchio(Punto(600, 100), 50, Red) };
-CVettCerchi vett3 = { Ccerchio(Punto(700, 100), 50, Red) };
+CVettCerchi vett1 = { Ccerchio(Punto(400, 100), 50, Red) , Ccerchio(Punto(525, 100), 50, Red), Ccerchio(Punto(650, 100), 50, Red), Ccerchio(Punto(775, 100), 50, Red)};
+CVettCerchi vett2 = { Ccerchio(Punto(400, 100), 50, Red),Ccerchio(Punto(775, 100), 50, Red) };
+CVettCerchi vett3 = { Ccerchio(Punto(525, 100), 50, Red) };
+
+
+CRiquadro riquadro;
 
 void run() {
 	
-	std::string tmp="";
 	int cont = 0;
 	while (true)
 	{
-	time_t currentTime;
-	long ora=time(&currentTime);
-
-		
+		riquadro.disegna();
 		tastiera.disegnaTastiera();
 		vett1.disegna(); 
+
 		vett1.aggY();
 		
 		cont++;
@@ -56,7 +56,7 @@ void run() {
 			tastiera.cambiaColore(3);
 		}
 	  
-		Wait(18);
+		Wait(8);
 		Clear();
 
 		
@@ -64,56 +64,4 @@ void run() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-	/*int x = 0;
-	bool click = false;
-	bool statoMouseFramePrec = false;
-	Color colore = Blue;
-	Color bordo = White;
-	while (true) {
-		if (!click)
-		{
-			DrawRectangle(x, 15, 40, 40, colore, bordo);
-			x++;
-		}
-		else {
-			DrawRectangle(x, 15, 40, 40, colore, bordo);
-			x+=2;
-		}
-		
-		Wait(33);
-		Clear();
-
-
-
-
-
-		bool statoMouseFrameAttu = LeftMousePressed();
-		if (statoMouseFrameAttu==true&& statoMouseFramePrec==false) {
-
-			int xMouse = MouseX();
-			int yMouse = MouseY();
-
-			if (x < xMouse && xMouse < x + 40) {
-
-				if (10 < yMouse && yMouse < 10 + 40) {
-
-					click = !click;
-					colore = MakeColor(rand() % 256, rand() % 256, rand() % 256);
-					bordo = MakeColor(rand() % 256, rand() % 256, rand() % 256);
-				}
-			}
-		}
-		statoMouseFramePrec = statoMouseFrameAttu;
-	}*/
 }
