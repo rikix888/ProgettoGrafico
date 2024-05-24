@@ -7,12 +7,12 @@ private:
 
 public:
 	CVettCerchi();
-	CVettCerchi(Ccerchio cerchio1, Ccerchio cerchio2, Ccerchio cerchio3, Ccerchio cerchio4);
-	CVettCerchi(Ccerchio cerchio1, Ccerchio cerchio2, Ccerchio cerchio3);
 	CVettCerchi(Ccerchio cerchio1, Ccerchio cerchio2);
 	CVettCerchi(Ccerchio cerchio1);
 	Ccerchio getCerchio(int pos);
 	void setVett(Ccerchio cerchio);
+	int getX(int pos);
+	int geyY(int pos);
 	void aggY();
 	void disegnaTast();
 	void disegna();

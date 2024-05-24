@@ -10,8 +10,8 @@
 #include <string>
 
 CTastiera tastiera;
-CVettCerchi vett1 = { Ccerchio(Punto(400, 100), 50, Red) , Ccerchio(Punto(525, 100), 50, Red), Ccerchio(Punto(650, 100), 50, Red), Ccerchio(Punto(775, 100), 50, Red)};
-CVettCerchi vett2 = { Ccerchio(Punto(400, 100), 50, Red),Ccerchio(Punto(775, 100), 50, Red) };
+CVettCerchi vett1 = { Ccerchio(Punto(400, 100), 50, Red) , Ccerchio(Punto(775, 100), 50, Red)};
+CVettCerchi vett2 = { Ccerchio(Punto(650, 100), 50, Red),Ccerchio(Punto(775, 100), 50, Red) };
 CVettCerchi vett3 = { Ccerchio(Punto(525, 100), 50, Red) };
 
 
@@ -40,11 +40,16 @@ void run() {
 		
 		}
 		
-		char const key = LastKey();
+		char const key = LastBufferedKey();
 
 		if (key == 'q') { 
 
 			tastiera.cambiaColore(0);
+			if (tastiera.controllaCerchio(0)) {
+				DrawString(100, 100, "Giusto", "Arial", 50, White);
+				Present();
+				Wait(100);
+			}
 		}
 		if (key == 'w') {
 			tastiera.cambiaColore(1);

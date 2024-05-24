@@ -3,6 +3,7 @@
 
 CTastiera::CTastiera()
 {
+
 	tastiera[0] = Ccerchio(Punto(400, 780), 50, White);
 	tastiera[1] = Ccerchio(Punto(525, 780), 50, White);
 	tastiera[2] = Ccerchio(Punto(650, 780), 50, White);
@@ -35,6 +36,13 @@ void CTastiera::aggiornaColori()
 			tempo[i] = 0;
 		}
 	}
+}
+
+bool CTastiera::controllaCerchio(int pos)
+{
+	if (vett.getX(pos) && vett.geyY(pos) == punto.getX() && punto.getY()) 
+		return true;
+	return false;
 }
 
 

@@ -9,34 +9,15 @@ CVettCerchi::CVettCerchi()
 
 }
 
-CVettCerchi::CVettCerchi(Ccerchio cerchio1, Ccerchio cerchio2, Ccerchio cerchio3, Ccerchio cerchio4)
-{
-	vett[0] = cerchio1;
-	vett[1] = cerchio2;
-	vett[2] = cerchio3;
-	vett[3] = cerchio4;
-	
-}
-
-CVettCerchi::CVettCerchi(Ccerchio cerchio1, Ccerchio cerchio2, Ccerchio cerchio3)
-{
-	vett[0] = cerchio1;
-	vett[1] = cerchio2;
-	vett[2] = cerchio3;
-
-}
-
 CVettCerchi::CVettCerchi(Ccerchio cerchio1, Ccerchio cerchio2)
 {
 	vett[0] = cerchio1;
 	vett[1] = cerchio2;
-
 }
 
 CVettCerchi::CVettCerchi(Ccerchio cerchio1)
 {
 	vett[0] = cerchio1;
-	
 }
 
 Ccerchio CVettCerchi::getCerchio(int pos)
@@ -50,6 +31,16 @@ void CVettCerchi::setVett(Ccerchio cerchio)
 	{
 		vett[i] = cerchio;
 	}
+}
+
+int CVettCerchi::getX(int pos)
+{
+	return vett[pos].getX();
+}
+
+int CVettCerchi::geyY(int pos)
+{
+	return vett[pos].getY();
 }
 
 void CVettCerchi::aggY()
