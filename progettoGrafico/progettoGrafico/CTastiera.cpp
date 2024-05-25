@@ -31,7 +31,7 @@ void CTastiera::aggiornaColori()
 {
 	uint64_t currentTime = timeSinceEpochMillisec();
 	for (int i = 0; i < 4; i++) {
-		if (tempo[i] != 0 && (currentTime - tempo[i]) >= 150) { 
+		if (tempo[i] != 0 && (currentTime - tempo[i]) >= 150) {
 			tastiera[i].setColore(White);
 			tempo[i] = 0;
 		}
