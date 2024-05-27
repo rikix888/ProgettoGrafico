@@ -14,6 +14,11 @@ CTastiera::CTastiera()
 	}
 }
 
+Ccerchio CTastiera::getCerchioTastiera(int pos)
+{
+	return tastiera[pos];
+}
+
 uint64_t timeSinceEpochMillisec() {
 	using namespace std::chrono;
 	return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
@@ -38,12 +43,6 @@ void CTastiera::aggiornaColori()
 	}
 }
 
-bool CTastiera::controllaCerchio(int pos)
-{
-	if (vett.getX(pos) && vett.geyY(pos) == punto.getX() && punto.getY()) 
-		return true;
-	return false;
-}
 
 
 void CTastiera::disegnaTastiera()

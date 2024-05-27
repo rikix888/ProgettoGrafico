@@ -33,17 +33,17 @@ void CVettCerchi::setVett(Ccerchio cerchio)
 	}
 }
 
-int CVettCerchi::getX(int pos)
+int CVettCerchi::getXVett(int pos)
 {
-	return vett[pos].getX();
+	return vett[pos].getXCerchio();
 }
 
-int CVettCerchi::geyY(int pos)
+int CVettCerchi::getYVett(int pos)
 {
-	return vett[pos].getY();
+	return vett[pos].getYCerchio();
 }
 
-void CVettCerchi::aggY()
+void CVettCerchi::aggYVett()
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -65,4 +65,19 @@ void CVettCerchi::disegna()
 	{
 		vett[i].disegnaCerchi();
 	}
+}
+
+bool CVettCerchi::controllaCerchio(CTastiera& tastiera, int pos) {
+	if (pos < 0 || pos >= 4) {
+		return false; 
+	}
+
+	int xCerchio = vett[pos].getXCerchio();
+	int yCerchio = vett[pos].getYCerchio();
+	Ccerchio cerchioTastiera = tastiera.getCerchioTastiera(pos); // Variabile temporanea
+	int xTastiera = cerchioTastiera.getXCerchio();
+	int yTastiera = cerchioTastiera.getYCerchio();
+
+	// Controlla se il cerchio si trova sopra la tastiera
+	return (xCerchio == xTastiera && yCerchio == yTastiera);
 }

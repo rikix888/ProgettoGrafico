@@ -19,31 +19,31 @@ void Ccerchio::setColore(Color colore)
 }
 void Ccerchio::disegnaCerchioTastiera()
 {
-	DrawCircle(punti.x, punti.y, raggio, colore, Blue);
+	DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Blue);
 
 
 }
 
 void Ccerchio::disegnaCerchi()
 {
-	DrawCircle(punti.x, punti.y, raggio, colore, Yellow);
-	DrawCircle(punti.x, punti.y, (raggio/3), LightBlue, Yellow);
+	DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Yellow);
+	DrawCircle(punti.getXPunto(), punti.getYPunto(), (raggio/3), LightBlue, Yellow);
 
 }
 
 void Ccerchio::aggY()
 {
-	 punti.y++;
+	 punti.setY(1);
 }
 
-int Ccerchio::getY()
+int Ccerchio::getYCerchio()
 {
-	return punti.y;
+	return punti.getYPunto();
 }
 
-int Ccerchio::getX()
+int Ccerchio::getXCerchio()
 {
-	return punti.x;
+	return punti.getXPunto();
 }
 
 int Ccerchio::getRaggio()

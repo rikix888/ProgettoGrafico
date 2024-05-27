@@ -26,17 +26,17 @@ void run() {
 		tastiera.disegnaTastiera();
 		vett1.disegna(); 
 
-		vett1.aggY();
+		vett1.aggYVett();
 		
 		cont++;
 		if (cont > 140) {
 			vett2.disegna();
-			vett2.aggY();
+			vett2.aggYVett();
 			
 		}
 		if (cont > 270) {
 			vett3.disegna();
-			vett3.aggY();
+			vett3.aggYVett();
 		
 		}
 		
@@ -45,10 +45,10 @@ void run() {
 		if (key == 'q') { 
 
 			tastiera.cambiaColore(0);
-			if (tastiera.controllaCerchio(0)) {
-				DrawString(100, 100, "Giusto", "Arial", 50, White);
+			if (vett1.controllaCerchio(tastiera, 0)) {
+				DrawString(100, 100, "Giusto", "Arial", 200, White);
 				Present();
-				Wait(100);
+				Wait(1000);
 			}
 		}
 		if (key == 'w') {

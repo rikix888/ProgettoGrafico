@@ -16,8 +16,8 @@ public:
 	void disegnaCerchioTastiera();
 	void disegnaCerchi();
 	void aggY();
-	int getY();
-	int getX();
+	int getYCerchio();
+	int getXCerchio();
 	int getRaggio();
 
 };

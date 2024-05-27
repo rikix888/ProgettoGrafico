@@ -1,23 +1,13 @@
 #pragma once
 class Punto
 {
-public:
+private:
 	int x, y;
-
-	Punto() {
-		x = 0;
-		y = 0;
-	}
-	Punto(int x, int y) {
-		this->x = x;
-		this->y = y;
-
-	}
-	int getX(){
-		return x;
-	}
-	int getY() {
-		return y;
-	}
+public:
+	Punto();
+	Punto(int x, int y);
+	int getXPunto();
+	int getYPunto();
+	void setY(int num);
 };
 

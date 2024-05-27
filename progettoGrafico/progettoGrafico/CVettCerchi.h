@@ -1,5 +1,6 @@
 #pragma once
 #include "Ccerchio.h"
+#include "CTastiera.h"
 class CVettCerchi
 {
 private:
@@ -11,10 +12,11 @@ public:
 	CVettCerchi(Ccerchio cerchio1);
 	Ccerchio getCerchio(int pos);
 	void setVett(Ccerchio cerchio);
-	int getX(int pos);
-	int geyY(int pos);
-	void aggY();
+	int getXVett(int pos);
+	int getYVett(int pos);
+	void aggYVett();
 	void disegnaTast();
 	void disegna();
+	bool controllaCerchio(CTastiera& tastiera, int pos);
 };
 
