@@ -46,19 +46,30 @@ void run() {
 
 			tastiera.cambiaColore(0);
 			if (vett1.controllaCerchio(tastiera, 0)) {
-				DrawString(100, 100, "Giusto", "Arial", 200, White);
-				Present();
-				Wait(1000);
+				
+				Clear();
 			}
 		}
 		if (key == 'w') {
 			tastiera.cambiaColore(1);
+			if (vett1.controllaCerchio(tastiera, 1)) {
+				Clear();
+			
+			}
 		}
 		if (key == 'o') {
 			tastiera.cambiaColore(2);
+			if (vett1.controllaCerchio(tastiera, 2)) {
+				Clear();
+				
+			}
 		}
 		if (key == 'p') {
 			tastiera.cambiaColore(3);
+			if (vett1.controllaCerchio(tastiera, 3)) {
+				Clear();
+				
+			}
 		}
 	  
 		Wait(8);

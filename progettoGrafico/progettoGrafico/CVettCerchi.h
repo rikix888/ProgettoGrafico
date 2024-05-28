@@ -18,5 +18,6 @@ public:
 	void disegnaTast();
 	void disegna();
 	bool controllaCerchio(CTastiera& tastiera, int pos);
+	void eliminaCerchio(int pos);
 };
 

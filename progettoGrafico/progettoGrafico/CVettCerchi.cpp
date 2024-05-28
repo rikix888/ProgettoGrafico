@@ -1,4 +1,5 @@
 #include "CVettCerchi.h"
+#include <iostream>
 
 CVettCerchi::CVettCerchi()
 {
@@ -68,16 +69,19 @@ void CVettCerchi::disegna()
 }
 
 bool CVettCerchi::controllaCerchio(CTastiera& tastiera, int pos) {
-	if (pos < 0 || pos >= 4) {
-		return false; 
-	}
-
 	int xCerchio = vett[pos].getXCerchio();
 	int yCerchio = vett[pos].getYCerchio();
-	Ccerchio cerchioTastiera = tastiera.getCerchioTastiera(pos); // Variabile temporanea
+	Ccerchio cerchioTastiera = tastiera.getCerchioTastiera(pos);
+	
 	int xTastiera = cerchioTastiera.getXCerchio();
 	int yTastiera = cerchioTastiera.getYCerchio();
 
-	// Controlla se il cerchio si trova sopra la tastiera
-	return (xCerchio == xTastiera && yCerchio == yTastiera);
+
+	return (xCerchio == xTastiera && (yCerchio<=yTastiera+10 && yCerchio>=yTastiera-10));
+
+
+}
+
+void CVettCerchi::eliminaCerchio(int pos)
+{
 }
