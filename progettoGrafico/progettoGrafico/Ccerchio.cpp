@@ -4,6 +4,7 @@ Ccerchio::Ccerchio()
 {
 	raggio = 0;
 	colore = Red;
+	disegna = true;
 }
 
 Ccerchio::Ccerchio(Punto punti, int raggio, Color colore)
@@ -22,13 +23,18 @@ void Ccerchio::disegnaCerchioTastiera()
 	DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Blue);
 
 
+
+}
+void Ccerchio::cambiaStato() {
+	disegna = false;
 }
 
 void Ccerchio::disegnaCerchi()
 {
-	DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Yellow);
-	DrawCircle(punti.getXPunto(), punti.getYPunto(), (raggio/3), LightBlue, Yellow);
-
+	if (disegna){
+		DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Yellow);
+		DrawCircle(punti.getXPunto(), punti.getYPunto(), (raggio/3), LightBlue, Yellow);
+	}
 }
 
 void Ccerchio::aggY()

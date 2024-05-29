@@ -8,6 +8,7 @@ private:
 	Punto punti;
 	int raggio;
 	Color colore;
+	bool disegna;
 
 public:
 	Ccerchio();
@@ -15,6 +16,7 @@ public:
 	void setColore(Color colore);
 	void disegnaCerchioTastiera();
 	void disegnaCerchi();
+	void cambiaStato();
 	void aggY();
 	int getYCerchio();
 	int getXCerchio();

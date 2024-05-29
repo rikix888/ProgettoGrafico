@@ -84,4 +84,7 @@ bool CVettCerchi::controllaCerchio(CTastiera& tastiera, int pos) {
 
 void CVettCerchi::eliminaCerchio(int pos)
 {
+
+	vett[pos].cambiaStato();
+	
 }

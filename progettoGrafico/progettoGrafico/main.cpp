@@ -19,9 +19,12 @@ CRiquadro riquadro;
 
 void run() {
 	
+	
 	int cont = 0;
 	while (true)
 	{
+		UseDoubleBuffering(true);
+	
 		riquadro.disegna();
 		tastiera.disegnaTastiera();
 		vett1.disegna(); 
@@ -47,12 +50,14 @@ void run() {
 			tastiera.cambiaColore(0);
 			if (vett1.controllaCerchio(tastiera, 0)) {
 				
+				vett1.eliminaCerchio(0);
 				Clear();
 			}
 		}
 		if (key == 'w') {
 			tastiera.cambiaColore(1);
 			if (vett1.controllaCerchio(tastiera, 1)) {
+				vett1.eliminaCerchio(1);
 				Clear();
 			
 			}
@@ -60,6 +65,7 @@ void run() {
 		if (key == 'o') {
 			tastiera.cambiaColore(2);
 			if (vett1.controllaCerchio(tastiera, 2)) {
+				vett1.eliminaCerchio(2);
 				Clear();
 				
 			}
@@ -67,12 +73,14 @@ void run() {
 		if (key == 'p') {
 			tastiera.cambiaColore(3);
 			if (vett1.controllaCerchio(tastiera, 3)) {
+				vett1.eliminaCerchio(3);
 				Clear();
 				
 			}
 		}
 	  
-		Wait(8);
+		Wait(8);	
+		Present();
 		Clear();
 
 		
