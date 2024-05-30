@@ -11,9 +11,6 @@
 
 CTastiera tastiera;
 CVettCerchi vett1 = { Ccerchio(Punto(400, 100), 50, Red) , Ccerchio(Punto(775, 100), 50, Red)};
-CVettCerchi vett2 = { Ccerchio(Punto(650, 100), 50, Red),Ccerchio(Punto(775, 100), 50, Red) };
-CVettCerchi vett3 = { Ccerchio(Punto(525, 100), 50, Red) };
-
 
 CRiquadro riquadro;
 
