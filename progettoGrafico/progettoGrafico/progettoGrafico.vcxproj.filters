@@ -33,6 +33,9 @@
     <ClCompile Include="CRiquadro.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="CGioco.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="immediate2d.h">
@@ -51,6 +54,9 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="CRiquadro.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="CGioco.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

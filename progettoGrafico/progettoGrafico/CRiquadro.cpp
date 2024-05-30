@@ -7,7 +7,7 @@ CRiquadro::CRiquadro()
 
 }
 
-void CRiquadro::disegna()
+void CRiquadro::disegnaRiquadro()
 {
 	DrawLine(330, 1400, 330, 0, spessore, colore);
 	DrawLine(845, 1400, 845, 0, spessore, colore);

@@ -8,7 +8,7 @@ private:
 	Color colore;
 public:
 	CRiquadro();
-	void disegna();
+	void disegnaRiquadro();
 
 };
 

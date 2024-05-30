@@ -35,7 +35,7 @@ void CTastiera::cambiaColore(int pos)
 void CTastiera::aggiornaColori()
 {
 	uint64_t currentTime = timeSinceEpochMillisec();
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < MAX_TASTIERA; i++) {
 		if (tempo[i] != 0 && (currentTime - tempo[i]) >= 150) {
 			tastiera[i].setColore(White);
 			tempo[i] = 0;
@@ -48,7 +48,7 @@ void CTastiera::aggiornaColori()
 void CTastiera::disegnaTastiera()
 {
 	aggiornaColori();
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < MAX_TASTIERA; i++)
 	{
 		tastiera[i].disegnaCerchioTastiera();
 	}
