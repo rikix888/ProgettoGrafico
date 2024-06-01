@@ -7,32 +7,21 @@ CVettCerchi::CVettCerchi()
 	{
 		vett[i] = Ccerchio(Punto(525, 100), 50, Red);
 	}
-	/*vett[0]= Ccerchio(Punto(100, 100), 50, Red);
-	vett[1]= Ccerchio(Punto(200, 100), 50, Red);
-	vett[2] = Ccerchio(Punto(300, 100), 50, Red);
-	vett[3] = Ccerchio(Punto(400, 100), 50, Red);*/
+	numCerchi = 0;
 
 }
-
-//CVettCerchi::CVettCerchi(Ccerchio cerchio1, Ccerchio cerchio2)
-//{
-//	vett[0] = cerchio1;
-//	vett[1] = cerchio2;
-//}
-//
-//CVettCerchi::CVettCerchi(Ccerchio cerchio1)
-//{
-//	vett[0] = cerchio1;
-//}
 
 Ccerchio CVettCerchi::getCerchio(int pos)
 {
 	return vett[pos];
 }
 
-void CVettCerchi::setVett(Ccerchio cerchio, int i)
+void CVettCerchi::setVett(Ccerchio cerchio)
 {
-	vett[i] = cerchio;
+	if (numCerchi < MAX_CERCHI) {
+		vett[numCerchi] = cerchio;
+		numCerchi++;
+	}
 	
 }
 
@@ -54,17 +43,9 @@ void CVettCerchi::aggYVett()
 	}
 }
 
-//void CVettCerchi::disegnaTast()
-//{
-//	for (int i = 0; i < 4; i++)
-//	{
-//		vett[i].disegnaCerchioTastiera();
-//	}
-//}
-
 void CVettCerchi::disegna()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < numCerchi; i++)
 	{
 		vett[i].disegnaCerchi();
 	}
@@ -84,16 +65,14 @@ bool CVettCerchi::controllaCerchio(CTastiera& tastiera, int pos) {
 
 }
 
-bool CVettCerchi::isCerchioFuori(CTastiera& tastiera, int pos)
+void CVettCerchi::controllaLimite(int limite)
 {
-	int xCerchio = vett[pos].getXCerchio();
-	int yCerchio = vett[pos].getYCerchio();
-	Ccerchio cerchioTastiera = tastiera.getCerchioTastiera(pos);
+	for (int i = 0; i < MAX_CERCHI; i++) {
+		if (vett[i].getYCerchio() > limite) {
+			eliminaCerchio(i);
+		}
+	}
 
-	int xTastiera = cerchioTastiera.getXCerchio();
-	int yTastiera = cerchioTastiera.getYCerchio();
-
-	return  (xCerchio == xTastiera && (yCerchio >= yTastiera + 10));
 }
 
 void CVettCerchi::eliminaCerchio(int pos)
@@ -101,4 +80,14 @@ void CVettCerchi::eliminaCerchio(int pos)
 
 	vett[pos].cambiaStato();
 	
+}
+
+
+void CVettCerchi::aggiornaDiscesa(uint64_t currentTimestamp)
+{
+	for (int i = 0; i < numCerchi; i++) {
+		if (vett[i].isDiscesaIniziata(currentTimestamp)) {
+			vett[i].aggY();
+		}
+	}
 }

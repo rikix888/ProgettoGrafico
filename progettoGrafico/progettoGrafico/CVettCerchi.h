@@ -6,20 +6,19 @@ class CVettCerchi
 {
 private:
 	Ccerchio vett[MAX_CERCHI];
+	int numCerchi;
 
 public:
 	CVettCerchi();
-	/*CVettCerchi(Ccerchio cerchio1, Ccerchio cerchio2);
-	CVettCerchi(Ccerchio cerchio1);*/
 	Ccerchio getCerchio(int pos);
-	void setVett(Ccerchio cerchio, int i);
+	void setVett(Ccerchio cerchio);
 	int getXVett(int pos);
 	int getYVett(int pos);
 	void aggYVett();
-	/*void disegnaTast();*/
 	void disegna();
 	bool controllaCerchio(CTastiera& tastiera, int pos);
-	bool isCerchioFuori(CTastiera& tastiera, int pos);
+	void controllaLimite(int limite);
 	void eliminaCerchio(int pos);
+	void aggiornaDiscesa(uint64_t currentTimestamp);
 };
 

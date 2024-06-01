@@ -1,6 +1,7 @@
 #pragma once
 #include "Punto.h"
 #include "immediate2d.h"
+#include <chrono>
 
 class Ccerchio
 {
@@ -9,6 +10,7 @@ private:
 	int raggio;
 	Color colore;
 	bool disegna;
+	uint64_t inizioDiscesa;
 
 public:
 	Ccerchio();
@@ -21,6 +23,7 @@ public:
 	int getYCerchio();
 	int getXCerchio();
 	int getRaggio();
-
+	void setInizioDiscesa(uint64_t timestamp);
+	bool isDiscesaIniziata(uint64_t currentTimestamp);
 };
 

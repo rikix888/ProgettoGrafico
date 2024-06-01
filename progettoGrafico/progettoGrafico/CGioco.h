@@ -14,9 +14,11 @@ public:
 	void inizia();
 	void disegnaNote();
 	bool controlla(CTastiera& tastiera, int pos);
-	bool isFuori(CTastiera& tastiera, int pos);
+	void controllaLimiteCerchio(int limite);
 	int trovaCerchio(int xTastiera, int yTastiera);
 	void elimina(int pos);
+	void aggiornaDiscesa();
+
 
 };
 

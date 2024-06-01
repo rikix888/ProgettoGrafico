@@ -5,6 +5,7 @@ Ccerchio::Ccerchio()
 	raggio = 0;
 	colore = Red;
 	disegna = true;
+	inizioDiscesa=0;
 }
 
 Ccerchio::Ccerchio(Punto punti, int raggio, Color colore)
@@ -21,8 +22,6 @@ void Ccerchio::setColore(Color colore)
 void Ccerchio::disegnaCerchioTastiera()
 {
 	DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Blue);
-
-
 
 }
 void Ccerchio::cambiaStato() {
@@ -55,4 +54,14 @@ int Ccerchio::getXCerchio()
 int Ccerchio::getRaggio()
 {
 	return raggio;
+}
+
+void Ccerchio::setInizioDiscesa(uint64_t timestamp)
+{
+	inizioDiscesa = timestamp;
+}
+
+bool Ccerchio::isDiscesaIniziata(uint64_t currentTimestamp)
+{
+	return currentTimestamp >= inizioDiscesa;
 }

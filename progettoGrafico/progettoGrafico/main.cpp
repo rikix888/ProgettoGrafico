@@ -16,14 +16,16 @@ CGioco gioco;
 
 void run() {
 
-	int cont = 0;
+
 	while (true)
 	{
+		
 		UseDoubleBuffering(true);
 
 		riquadro.disegnaRiquadro();
 		tastiera.disegnaTastiera();
 		gioco.disegnaNote();
+		gioco.aggiornaDiscesa();
 
 		char const key = LastBufferedKey();
 
