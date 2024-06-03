@@ -1,6 +1,9 @@
 #pragma once
 #include "CVettCerchi.h"
 
+
+
+
 class CGioco
 {
 private:

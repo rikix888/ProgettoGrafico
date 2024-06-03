@@ -7,6 +7,7 @@ CGioco::CGioco()
     colore = Red;
 
 }
+
 uint64_t CGioco::timeSinceEpochMillisec()
 {
     using namespace std::chrono;
@@ -17,33 +18,48 @@ void CGioco::inizia()
 {
     uint64_t currentTime = timeSinceEpochMillisec();
 
-    
+    /*400=RE
+      525=FA
+      650=SOL
+      775=SOL#
+    */
 
-    Ccerchio cerchio1(Punto(400, 100), 50, Red, 0);
+    Ccerchio cerchio1(Punto(400, -100), 50, Red, 0);
     cerchio1.setInizioDiscesa(currentTime);
-
-    Ccerchio cerchio2(Punto(525, 100), 50, Red, 0);
-    cerchio2.setInizioDiscesa(currentTime);
-
-    Ccerchio cerchio3(Punto(650, 100), 50, Red, 0);
-    cerchio3.setInizioDiscesa(currentTime);
-
-    Ccerchio cerchio4(Punto(775, 100), 50, Red, 0);
-    cerchio4.setInizioDiscesa(currentTime);
-
-
-    //Ccerchio cerchio5(Punto(400, 100), 50, Red, 0);
-    //cerchio5.setInizioDiscesa(currentTime + 90000000000); 
-
-    //Ccerchio cerchio6(Punto(650, 100), 50, Red, 0);
-    //cerchio6.setInizioDiscesa(currentTime + 100000000000); 
-
     vettCerchi.setVett(cerchio1);
+
+    Ccerchio cerchio2(Punto(525, -100), 50, Red, 0);
+    cerchio2.setInizioDiscesa(currentTime+ 2000);
     vettCerchi.setVett(cerchio2);
+
+    Ccerchio cerchio3(Punto(650, -100), 50, Red, 0);
+    cerchio3.setInizioDiscesa(currentTime + 4000);
     vettCerchi.setVett(cerchio3);
+
+    Ccerchio cerchio4(Punto(400, -100), 50, Red, 0);
+    cerchio4.setInizioDiscesa(currentTime + 6050);
     vettCerchi.setVett(cerchio4);
-   /* vettCerchi.setVett(cerchio5);
-    vettCerchi.setVett(cerchio6);*/
+
+
+    Ccerchio cerchio5(Punto(525, -100), 50, Red, 0);
+    cerchio5.setInizioDiscesa(currentTime + 8000);
+    vettCerchi.setVett(cerchio5);
+
+    Ccerchio cerchio6(Punto(775, -1000), 50, Red, 0);
+    cerchio6.setInizioDiscesa(currentTime + 10000);
+    vettCerchi.setVett(cerchio6);
+
+    Ccerchio cerchio7(Punto(650, -1200), 50, Red, 0);
+    cerchio7.setInizioDiscesa(currentTime + 12000);
+    vettCerchi.setVett(cerchio7);
+
+    
+   
+    
+    
+   
+   
+    
 
 }
 
@@ -61,7 +77,7 @@ void CGioco::disegnaRiquadro()
 
 void CGioco::disegnaNote()
 {
-	vettCerchi.disegna();
+    vettCerchi.disegna(timeSinceEpochMillisec());
 	vettCerchi.aggYVett();
 	controllaLimiteCerchio(800);
 
@@ -84,7 +100,7 @@ int CGioco::trovaCerchio(int xTastiera, int yTastiera)
 	for (int i = 0; i < MAX_CERCHI; i++) {
 		int xCerchio = vettCerchi.getXVett(i);
 		int yCerchio = vettCerchi.getYVett(i);
-		if (xCerchio == xTastiera && (yCerchio <= yTastiera + 10 && yCerchio >= yTastiera - 10)) {
+		if (xCerchio == xTastiera && (yCerchio <= yTastiera + 35 && yCerchio >= yTastiera - 35)) {
 			return i;
 		}
 	}
@@ -99,6 +115,6 @@ void CGioco::elimina(int pos)
 
 void CGioco::aggiornaDiscesa()
 {
-    uint64_t currentTime = timeSinceEpochMillisec();
-    vettCerchi.aggiornaDiscesa(currentTime);
+ 
+    vettCerchi.aggiornaDiscesa(timeSinceEpochMillisec());
 }

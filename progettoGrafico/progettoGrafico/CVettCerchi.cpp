@@ -43,13 +43,15 @@ void CVettCerchi::aggYVett()
 	}
 }
 
-void CVettCerchi::disegna()
+void CVettCerchi::disegna(uint64_t currentTimestamp)
 {
 	for (int i = 0; i < numCerchi; i++)
 	{
-		vett[i].disegnaCerchi();
+		vett[i].disegnaCerchi(currentTimestamp);
 	}
 }
+
+
 
 bool CVettCerchi::controllaCerchio(CTastiera& tastiera, int pos) {
 	int xCerchio = vett[pos].getXCerchio();
@@ -60,7 +62,7 @@ bool CVettCerchi::controllaCerchio(CTastiera& tastiera, int pos) {
 	int yTastiera = cerchioTastiera.getYCerchio();
 
 
-	return (xCerchio == xTastiera && (yCerchio<=yTastiera+10 && yCerchio>=yTastiera-10));
+	return (xCerchio == xTastiera && (yCerchio<=yTastiera+25 && yCerchio>=yTastiera-25));
 
 
 }

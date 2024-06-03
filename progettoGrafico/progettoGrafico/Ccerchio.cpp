@@ -13,7 +13,7 @@ Ccerchio::Ccerchio(Punto punti, int raggio, Color colore, uint64_t inizioDiscesa
 	this->punti = punti;
 	this->raggio = raggio;
 	this->colore = colore;
-	this->inizioDiscesa = 0;
+	this->inizioDiscesa = inizioDiscesa;
 }
 
 void Ccerchio::setColore(Color colore)
@@ -29,12 +29,17 @@ void Ccerchio::cambiaStato() {
 	disegna = false;
 }
 
-void Ccerchio::disegnaCerchi()
+void Ccerchio::disegnaCerchi(uint64_t currentTimestamp)
 {
-	if (disegna){
-		DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Yellow);
-		DrawCircle(punti.getXPunto(), punti.getYPunto(), (raggio/3), LightBlue, Yellow);
+	if (isDiscesaIniziata(currentTimestamp)) {
+
+		if (disegna){
+			DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Yellow);
+			DrawCircle(punti.getXPunto(), punti.getYPunto(), (raggio/3), LightBlue, Yellow);
+			
+		}
 	}
+
 }
 
 void Ccerchio::aggY()
