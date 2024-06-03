@@ -83,6 +83,7 @@ void CVettCerchi::eliminaCerchio(int pos)
 }
 
 
+
 void CVettCerchi::aggiornaDiscesa(uint64_t tempoAdesso)
 {
 	for (int i = 0; i < numCerchi; i++) {

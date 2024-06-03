@@ -1,44 +1,49 @@
 #include "CGioco.h"
-#include "CTastiera.cpp"
 
 CGioco::CGioco()
 {
 	inizia();
     spessore = 10;
     colore = Red;
-    disegnaRiquadro();
 
+}
+uint64_t CGioco::timeSinceEpochMillisec()
+{
+    using namespace std::chrono;
+    return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
 }
 
 void CGioco::inizia()
 {
     uint64_t currentTime = timeSinceEpochMillisec();
 
-    Ccerchio cerchio1(Punto(100, 100), 50, Red,0);
+    
+
+    Ccerchio cerchio1(Punto(400, 100), 50, Red, 0);
     cerchio1.setInizioDiscesa(currentTime);
 
-    Ccerchio cerchio2(Punto(200, 100), 50, Red, 0);
+    Ccerchio cerchio2(Punto(525, 100), 50, Red, 0);
     cerchio2.setInizioDiscesa(currentTime);
 
-    Ccerchio cerchio3(Punto(300, 100), 50, Red, 0);
+    Ccerchio cerchio3(Punto(650, 100), 50, Red, 0);
     cerchio3.setInizioDiscesa(currentTime);
 
-    Ccerchio cerchio4(Punto(400, 100), 50, Red, 0);
+    Ccerchio cerchio4(Punto(775, 100), 50, Red, 0);
     cerchio4.setInizioDiscesa(currentTime);
 
 
-    Ccerchio cerchio5(Punto(500, 100), 50, Red, 0);
-    cerchio5.setInizioDiscesa(currentTime + 2000); 
+    //Ccerchio cerchio5(Punto(400, 100), 50, Red, 0);
+    //cerchio5.setInizioDiscesa(currentTime + 90000000000); 
 
-    Ccerchio cerchio6(Punto(600, 100), 50, Red, 0);
-    cerchio6.setInizioDiscesa(currentTime + 2000); 
+    //Ccerchio cerchio6(Punto(650, 100), 50, Red, 0);
+    //cerchio6.setInizioDiscesa(currentTime + 100000000000); 
 
     vettCerchi.setVett(cerchio1);
     vettCerchi.setVett(cerchio2);
     vettCerchi.setVett(cerchio3);
     vettCerchi.setVett(cerchio4);
-    vettCerchi.setVett(cerchio5);
-    vettCerchi.setVett(cerchio6);
+   /* vettCerchi.setVett(cerchio5);
+    vettCerchi.setVett(cerchio6);*/
 
 }
 

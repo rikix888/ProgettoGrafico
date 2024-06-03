@@ -10,6 +10,7 @@ private:
 public:
 	CTastiera();
 	Ccerchio getCerchioTastiera(int pos);
+	uint64_t timeSinceEpochMillisec();
 	void cambiaColore(int pos);
 	void disegnaTastiera();
 	void aggiornaColori();

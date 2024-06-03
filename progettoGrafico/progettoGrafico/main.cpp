@@ -6,7 +6,7 @@
 #include "CGioco.h"
 #include <string>
 
-
+CTastiera tastiera;
 CGioco gioco;
 
 void run() {
@@ -19,6 +19,7 @@ void run() {
 
 		tastiera.disegnaTastiera();
 		gioco.disegnaNote();
+		gioco.disegnaRiquadro();
 		gioco.aggiornaDiscesa(); 
 
 		char const key = LastBufferedKey();
