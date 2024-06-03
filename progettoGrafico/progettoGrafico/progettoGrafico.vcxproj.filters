@@ -30,9 +30,6 @@
     <ClCompile Include="CTastiera.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="CRiquadro.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
     <ClCompile Include="CGioco.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
@@ -51,9 +48,6 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="CTastiera.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="CRiquadro.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="CGioco.h">

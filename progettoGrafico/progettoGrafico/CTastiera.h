@@ -1,6 +1,5 @@
 #pragma once
 #include "Ccerchio.h"
-#include <chrono>
 #define MAX_TASTIERA 4
 class CTastiera
 {

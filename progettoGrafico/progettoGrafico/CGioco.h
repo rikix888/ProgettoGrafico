@@ -1,5 +1,4 @@
 #pragma once
-#include "immediate2d.h"
 #include "CVettCerchi.h"
 
 class CGioco
@@ -7,11 +6,14 @@ class CGioco
 private:
 
 	CVettCerchi vettCerchi;
+	int spessore;
+	Color colore;
 
 public:
 
 	CGioco();
 	void inizia();
+	void disegnaRiquadro();
 	void disegnaNote();
 	bool controlla(CTastiera& tastiera, int pos);
 	void controllaLimiteCerchio(int limite);

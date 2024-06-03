@@ -3,15 +3,10 @@
 #define IMM2D_SCALE 1
 
 #define IMM2D_IMPLEMENTATION
-#include "immediate2d.h"
 #include "CGioco.h"
-#include "CTastiera.h"
-#include "CRiquadro.h"
 #include <string>
 
-CTastiera tastiera;
 
-CRiquadro riquadro;
 CGioco gioco;
 
 void run() {
@@ -22,7 +17,6 @@ void run() {
 		
 		UseDoubleBuffering(true);
 
-		riquadro.disegnaRiquadro();
 		tastiera.disegnaTastiera();
 		gioco.disegnaNote();
 		gioco.aggiornaDiscesa(); 

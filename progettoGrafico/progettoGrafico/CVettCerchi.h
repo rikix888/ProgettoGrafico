@@ -1,5 +1,4 @@
 #pragma once
-#include "Ccerchio.h"
 #include "CTastiera.h"
 #define MAX_CERCHI 30
 class CVettCerchi
