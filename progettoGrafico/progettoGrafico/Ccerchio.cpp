@@ -8,11 +8,12 @@ Ccerchio::Ccerchio()
 	inizioDiscesa=0;
 }
 
-Ccerchio::Ccerchio(Punto punti, int raggio, Color colore)
+Ccerchio::Ccerchio(Punto punti, int raggio, Color colore, uint64_t inizioDiscesa)
 {
 	this->punti = punti;
 	this->raggio = raggio;
 	this->colore = colore;
+	this->inizioDiscesa = 0;
 }
 
 void Ccerchio::setColore(Color colore)
@@ -56,12 +57,12 @@ int Ccerchio::getRaggio()
 	return raggio;
 }
 
-void Ccerchio::setInizioDiscesa(uint64_t timestamp)
+void Ccerchio::setInizioDiscesa(uint64_t tempoIniziale)
 {
-	inizioDiscesa = timestamp;
+	inizioDiscesa = tempoIniziale;
 }
 
-bool Ccerchio::isDiscesaIniziata(uint64_t currentTimestamp)
+bool Ccerchio::isDiscesaIniziata(uint64_t tempoAdesso)
 {
-	return currentTimestamp >= inizioDiscesa;
+	return tempoAdesso >= inizioDiscesa;
 }

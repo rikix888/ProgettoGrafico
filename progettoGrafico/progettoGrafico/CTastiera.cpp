@@ -4,10 +4,10 @@
 CTastiera::CTastiera()
 {
 
-	tastiera[0] = Ccerchio(Punto(400, 780), 55, White);
-	tastiera[1] = Ccerchio(Punto(525, 780), 55, White);
-	tastiera[2] = Ccerchio(Punto(650, 780), 55, White);
-	tastiera[3] = Ccerchio(Punto(775, 780), 55, White);
+	tastiera[0] = Ccerchio(Punto(400, 780), 55, White,0);
+	tastiera[1] = Ccerchio(Punto(525, 780), 55, White,0);
+	tastiera[2] = Ccerchio(Punto(650, 780), 55, White,0);
+	tastiera[3] = Ccerchio(Punto(775, 780), 55, White,0);
 
 	for (int i = 0; i < 4; i++) {
 		tempo[i] = 0;
@@ -41,6 +41,7 @@ void CTastiera::aggiornaColori()
 			tempo[i] = 0;
 		}
 	}
+
 }
 
 

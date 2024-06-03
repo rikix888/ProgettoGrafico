@@ -5,7 +5,7 @@ CVettCerchi::CVettCerchi()
 {
 	for (int i = 0; i < MAX_CERCHI; i++)
 	{
-		vett[i] = Ccerchio(Punto(525, 100), 50, Red);
+		vett[i] = Ccerchio(Punto(525, 100), 50, Red, 0);
 	}
 	numCerchi = 0;
 
@@ -83,10 +83,10 @@ void CVettCerchi::eliminaCerchio(int pos)
 }
 
 
-void CVettCerchi::aggiornaDiscesa(uint64_t currentTimestamp)
+void CVettCerchi::aggiornaDiscesa(uint64_t tempoAdesso)
 {
 	for (int i = 0; i < numCerchi; i++) {
-		if (vett[i].isDiscesaIniziata(currentTimestamp)) {
+		if (vett[i].isDiscesaIniziata(tempoAdesso)) {
 			vett[i].aggY();
 		}
 	}

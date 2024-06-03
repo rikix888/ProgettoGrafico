@@ -14,7 +14,7 @@ private:
 
 public:
 	Ccerchio();
-	Ccerchio(Punto punti, int raggio, Color colore);
+	Ccerchio(Punto punti, int raggio, Color colore, uint64_t inizioDiscesa);
 	void setColore(Color colore);
 	void disegnaCerchioTastiera();
 	void disegnaCerchi();
@@ -23,7 +23,7 @@ public:
 	int getYCerchio();
 	int getXCerchio();
 	int getRaggio();
-	void setInizioDiscesa(uint64_t timestamp);
-	bool isDiscesaIniziata(uint64_t currentTimestamp);
+	void setInizioDiscesa(uint64_t tempoIniziale);
+	bool isDiscesaIniziata(uint64_t tempoAdesso);
 };
 

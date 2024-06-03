@@ -25,7 +25,7 @@ void run() {
 		riquadro.disegnaRiquadro();
 		tastiera.disegnaTastiera();
 		gioco.disegnaNote();
-		gioco.aggiornaDiscesa();
+		gioco.aggiornaDiscesa(); 
 
 		char const key = LastBufferedKey();
 

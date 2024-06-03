@@ -19,6 +19,6 @@ public:
 	bool controllaCerchio(CTastiera& tastiera, int pos);
 	void controllaLimite(int limite);
 	void eliminaCerchio(int pos);
-	void aggiornaDiscesa(uint64_t currentTimestamp);
+	void aggiornaDiscesa(uint64_t tempoAdesso);
 };
 
