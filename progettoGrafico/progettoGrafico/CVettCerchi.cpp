@@ -43,11 +43,11 @@ void CVettCerchi::aggYVett()
 	}
 }
 
-void CVettCerchi::disegna(uint64_t currentTimestamp)
+void CVettCerchi::disegna(uint64_t tempoMain)
 {
 	for (int i = 0; i < numCerchi; i++)
 	{
-		vett[i].disegnaCerchi(currentTimestamp);
+		vett[i].disegnaCerchi(tempoMain);
 	}
 }
 

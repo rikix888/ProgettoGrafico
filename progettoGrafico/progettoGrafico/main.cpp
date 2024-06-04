@@ -13,8 +13,10 @@ CGioco gioco;
 
 void run() {
 
-
-	while (true)
+	int giuste = 0;
+	int sbagliate = 0;
+	bool ciclo = true;
+	while (ciclo)
 	{
 		
 		UseDoubleBuffering(true);
@@ -26,35 +28,40 @@ void run() {
 
 		char const key = LastBufferedKey();
 
-		/*
-	60 do
-	61 di d
-	62 re
-	63 re d
-	64 mi
-	65 fa
-	66 fa d
-	67 sol
-	68 sol d
-	69 la
-	70 la d
-	71 si
-	72 do
-	*/
+			/*
+		60 do
+		61 di d
+		62 re
+		63 re d
+		64 mi
+		65 fa
+		66 fa d
+		67 sol
+		68 sol d
+		69 la
+		70 la d
+		71 si
+		72 do
+		*/
 
 		/*400=RE
 		  525=FA
 		  650=SOL
 		  775=SOL#
 		*/
+
 		if (key == 'q') {
 			tastiera.cambiaColore(0);
 			int pos = gioco.trovaCerchio(400, 780);
 			if (pos != -1) {
 				PlayMusic(62, SEMIMINIMA);
 				gioco.elimina(pos);
+				giuste++;
 				Clear();
 			}
+			else
+				sbagliate++;
+
 		}
 		if (key == 'w') {
 			tastiera.cambiaColore(1);
@@ -62,8 +69,11 @@ void run() {
 			if (pos != -1) {
 				PlayMusic(65, SEMIMINIMA);
 				gioco.elimina(pos);
+				giuste++;
 				Clear();
 			}
+			else
+				sbagliate++;
 		}
 
 		if (key == 'o') {
@@ -72,8 +82,11 @@ void run() {
 			if (pos != -1) {
 				PlayMusic(67, SEMIMINIMA);
 				gioco.elimina(pos);
+				giuste++;
 				Clear();
 			}
+			else
+				sbagliate++;
 		}
 
 		if (key == 'p') {
@@ -82,8 +95,11 @@ void run() {
 			if (pos != -1) {
 				PlayMusic(68, SEMIMINIMA);
 				gioco.elimina(pos);
+				giuste++;
 				Clear();
 			}
+			else
+				sbagliate++;
 		}
 		
 
@@ -91,7 +107,14 @@ void run() {
 		Present();
 		Clear();
 
+		if (giuste + sbagliate == 13)
+			ciclo = false;
 
+	}
+	if (giuste >= 12) {
+		Clear();
+		DrawString(200, 200, "HAI VINTO", "Arial", 80, White);
+		Present();
 	}
 }
 

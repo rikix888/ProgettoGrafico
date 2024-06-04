@@ -14,7 +14,7 @@ public:
 	int getXVett(int pos);
 	int getYVett(int pos);
 	void aggYVett();
-	void disegna(uint64_t currentTimestamp);
+	void disegna(uint64_t tempoMain);
 	bool controllaCerchio(CTastiera& tastiera, int pos);
 	void controllaLimite(int limite);
 	void eliminaCerchio(int pos);

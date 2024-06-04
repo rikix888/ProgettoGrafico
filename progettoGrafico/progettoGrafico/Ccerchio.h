@@ -14,16 +14,16 @@ private:
 
 public:
 	Ccerchio();
-	Ccerchio(Punto punti, int raggio, Color colore, uint64_t inizioDiscesa=0);
+	Ccerchio(Punto punti, int raggio, Color colore, uint64_t inizioDiscesa);
 	void setColore(Color colore);
 	void disegnaCerchioTastiera();
-	void disegnaCerchi(uint64_t currentTimestamp);
+	void disegnaCerchi(uint64_t tempoMain);
 	void cambiaStato();
 	void aggY();
 	int getYCerchio();
 	int getXCerchio();
 	int getRaggio();
-	void setInizioDiscesa(uint64_t tempoIniziale);
-	bool isDiscesaIniziata(uint64_t tempoAdesso);
+	void setInizioDiscesa(uint64_t tempoGioco);
+	bool isDiscesaIniziata(uint64_t tempoMain);
 };
 

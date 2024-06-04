@@ -29,9 +29,9 @@ void Ccerchio::cambiaStato() {
 	disegna = false;
 }
 
-void Ccerchio::disegnaCerchi(uint64_t currentTimestamp)
+void Ccerchio::disegnaCerchi(uint64_t tempoMain)
 {
-	if (isDiscesaIniziata(currentTimestamp)) {
+	if (isDiscesaIniziata(tempoMain)) {
 
 		if (disegna){
 			DrawCircle(punti.getXPunto(), punti.getYPunto(), raggio, colore, Yellow);
@@ -62,12 +62,12 @@ int Ccerchio::getRaggio()
 	return raggio;
 }
 
-void Ccerchio::setInizioDiscesa(uint64_t tempoIniziale)
+void Ccerchio::setInizioDiscesa(uint64_t tempoGioco)
 {
-	inizioDiscesa = tempoIniziale;
+	inizioDiscesa = tempoGioco;
 }
 
-bool Ccerchio::isDiscesaIniziata(uint64_t tempoAdesso)
+bool Ccerchio::isDiscesaIniziata(uint64_t tempoMain)
 {
-	return tempoAdesso >= inizioDiscesa;
+	return tempoMain >= inizioDiscesa;
 }
