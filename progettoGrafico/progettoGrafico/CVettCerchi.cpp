@@ -94,3 +94,13 @@ void CVettCerchi::aggiornaDiscesa(uint64_t tempoAdesso)
 		}
 	}
 }
+
+bool CVettCerchi::tuttiCerchiEliminati()
+{
+	for (int i = 0; i < MAX_CERCHI; i++) {
+		if (vett[i].isDiscesaIniziata(timeSinceEpochMillisec()) && vett[i].disegna) {
+			return false;
+		}
+	}
+	return true;
+}

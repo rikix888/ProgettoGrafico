@@ -1,12 +1,12 @@
-#define IMM2D_WIDTH 1800//800
-#define IMM2D_HEIGHT 900//500
+#define IMM2D_WIDTH 1300//800
+#define IMM2D_HEIGHT 800//500
 #define IMM2D_SCALE 1
 #define SEMIMINIMA 300
 
 
 #define IMM2D_IMPLEMENTATION
 #include "CGioco.h"
-#include <string>
+#include <cstdlib>
 
 CTastiera tastiera;
 CGioco gioco;
@@ -14,7 +14,6 @@ CGioco gioco;
 void run() {
 
 	int giuste = 0;
-	int sbagliate = 0;
 	bool ciclo = true;
 	while (ciclo)
 	{
@@ -52,54 +51,50 @@ void run() {
 
 		if (key == 'q') {
 			tastiera.cambiaColore(0);
-			int pos = gioco.trovaCerchio(400, 780);
+			int pos = gioco.trovaCerchio(400, 720);
 			if (pos != -1) {
 				PlayMusic(62, SEMIMINIMA);
 				gioco.elimina(pos);
 				giuste++;
 				Clear();
 			}
-			else
-				sbagliate++;
+			
 
 		}
 		if (key == 'w') {
 			tastiera.cambiaColore(1);
-			int pos = gioco.trovaCerchio(525, 780);
+			int pos = gioco.trovaCerchio(525, 720);
 			if (pos != -1) {
 				PlayMusic(65, SEMIMINIMA);
 				gioco.elimina(pos);
 				giuste++;
 				Clear();
 			}
-			else
-				sbagliate++;
+		
 		}
 
 		if (key == 'o') {
 			tastiera.cambiaColore(2);
-			int pos = gioco.trovaCerchio(650, 780);
+			int pos = gioco.trovaCerchio(650, 720);
 			if (pos != -1) {
 				PlayMusic(67, SEMIMINIMA);
 				gioco.elimina(pos);
 				giuste++;
 				Clear();
 			}
-			else
-				sbagliate++;
+			
 		}
 
 		if (key == 'p') {
 			tastiera.cambiaColore(3);
-			int pos = gioco.trovaCerchio(775, 780);
+			int pos = gioco.trovaCerchio(775, 720);
 			if (pos != -1) {
 				PlayMusic(68, SEMIMINIMA);
 				gioco.elimina(pos);
 				giuste++;
 				Clear();
 			}
-			else
-				sbagliate++;
+			
 		}
 		
 
@@ -107,13 +102,22 @@ void run() {
 		Present();
 		Clear();
 
-		if (giuste + sbagliate == 13)
+		if (gioco.cont >= 12)
 			ciclo = false;
 
 	}
+
+	int sbagliate = abs(giuste - MAX_CERCHI);
+
 	if (giuste >= 12) {
 		Clear();
-		DrawString(200, 200, "HAI VINTO", "Arial", 80, White);
+		DrawString(580, 200, "HAI VINTO", "Arial", 80, White, true);
+		Present();
+	}
+	else {
+		Clear();
+		DrawString(560, 200, "HAI PERSO", "Arial", 80, White, true);
+		DrawString(560, 200, "prova ancora", "Arial", 50, White, true);
 		Present();
 	}
 }

@@ -27,6 +27,7 @@ void Ccerchio::disegnaCerchioTastiera()
 }
 void Ccerchio::cambiaStato() {
 	disegna = false;
+
 }
 
 void Ccerchio::disegnaCerchi(uint64_t tempoMain)

@@ -100,11 +100,13 @@ void CGioco::disegnaNote()
 bool CGioco::controlla(CTastiera& tastiera, int pos)
 {
 	return vettCerchi.controllaCerchio(tastiera, pos);
+ 
 }
 
 void CGioco::controllaLimiteCerchio(int limite)
 {
 	vettCerchi.controllaLimite(limite);
+   
 }
 
 
@@ -125,6 +127,7 @@ int CGioco::trovaCerchio(int xTastiera, int yTastiera)
 void CGioco::elimina(int pos)
 {
 	vettCerchi.eliminaCerchio(pos);
+    cont++;
 }
 
 void CGioco::aggiornaDiscesa()

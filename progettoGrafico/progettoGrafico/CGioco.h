@@ -15,6 +15,7 @@ private:
 public:
 
 	CGioco();
+	int cont;
 	uint64_t timeSinceEpochMillisec();
 	void inizia();
 	void disegnaRiquadro();

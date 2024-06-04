@@ -1,6 +1,6 @@
 #pragma once
 #include "CTastiera.h"
-#define MAX_CERCHI 30
+#define MAX_CERCHI 12
 class CVettCerchi
 {
 private:
@@ -19,5 +19,6 @@ public:
 	void controllaLimite(int limite);
 	void eliminaCerchio(int pos);
 	void aggiornaDiscesa(uint64_t tempoAdesso);
+	bool tuttiCerchiEliminati();
 };
 
