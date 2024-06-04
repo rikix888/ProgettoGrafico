@@ -1,4 +1,6 @@
 #include "CGioco.h"
+#include <string>
+using namespace std;
 
 CGioco::CGioco()
 {
@@ -128,6 +130,7 @@ void CGioco::elimina(int pos)
 {
 	vettCerchi.eliminaCerchio(pos);
     cont++;
+    punteggio += 10;
 }
 
 void CGioco::aggiornaDiscesa()
@@ -135,3 +138,18 @@ void CGioco::aggiornaDiscesa()
  
     vettCerchi.aggiornaDiscesa(timeSinceEpochMillisec());
 }
+
+bool CGioco::isTuttiCerchiEliminati()
+{
+    return vettCerchi.tuttiCerchiEliminati();
+}
+
+void CGioco::disegnaPunteggio()
+{
+    string puntiStr = "Punti: " + to_string(punteggio);
+    DrawString(900, 260, puntiStr.c_str(), "Arial", 50, White);
+    Present();
+}
+
+
+

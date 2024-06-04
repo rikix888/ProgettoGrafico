@@ -63,6 +63,11 @@ int Ccerchio::getRaggio()
 	return raggio;
 }
 
+bool Ccerchio::isDisegno()
+{
+	return disegna;
+}
+
 void Ccerchio::setInizioDiscesa(uint64_t tempoGioco)
 {
 	inizioDiscesa = tempoGioco;

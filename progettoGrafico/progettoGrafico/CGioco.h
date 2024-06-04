@@ -11,6 +11,7 @@ private:
 	CVettCerchi vettCerchi;
 	int spessore;
 	Color colore;
+	int punteggio;
 
 public:
 
@@ -25,6 +26,8 @@ public:
 	int trovaCerchio(int xTastiera, int yTastiera);
 	void elimina(int pos);
 	void aggiornaDiscesa();
+	bool isTuttiCerchiEliminati();
+	void disegnaPunteggio();
 
 
 };

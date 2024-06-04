@@ -7,6 +7,7 @@ private:
 	Ccerchio vett[MAX_CERCHI];
 	int numCerchi;
 
+
 public:
 	CVettCerchi();
 	Ccerchio getCerchio(int pos);

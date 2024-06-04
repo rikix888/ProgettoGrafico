@@ -23,6 +23,7 @@ public:
 	int getYCerchio();
 	int getXCerchio();
 	int getRaggio();
+	bool isDisegno();
 	void setInizioDiscesa(uint64_t tempoGioco);
 	bool isDiscesaIniziata(uint64_t tempoMain);
 };

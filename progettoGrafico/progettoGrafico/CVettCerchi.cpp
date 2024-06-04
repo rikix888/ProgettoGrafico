@@ -1,6 +1,11 @@
 #include "CVettCerchi.h"
 #include <iostream>
 
+uint64_t timeSinceEpochMillisec() {
+	using namespace std::chrono;
+	return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+}
+
 CVettCerchi::CVettCerchi()
 {
 	for (int i = 0; i < MAX_CERCHI; i++)
@@ -8,6 +13,7 @@ CVettCerchi::CVettCerchi()
 		vett[i] = Ccerchio(Punto(525, 100), 50, Red, 0);
 	}
 	numCerchi = 0;
+
 
 }
 
@@ -98,7 +104,7 @@ void CVettCerchi::aggiornaDiscesa(uint64_t tempoAdesso)
 bool CVettCerchi::tuttiCerchiEliminati()
 {
 	for (int i = 0; i < MAX_CERCHI; i++) {
-		if (vett[i].isDiscesaIniziata(timeSinceEpochMillisec()) && vett[i].disegna) {
+		if (vett[i].isDiscesaIniziata(timeSinceEpochMillisec()) && vett[i].isDisegno()) {
 			return false;
 		}
 	}

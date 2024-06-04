@@ -6,7 +6,6 @@
 
 #define IMM2D_IMPLEMENTATION
 #include "CGioco.h"
-#include <cstdlib>
 
 CTastiera tastiera;
 CGioco gioco;
@@ -24,6 +23,7 @@ void run() {
 		gioco.disegnaNote();
 		gioco.disegnaRiquadro();
 		gioco.aggiornaDiscesa(); 
+		gioco.disegnaPunteggio();
 
 		char const key = LastBufferedKey();
 
@@ -102,23 +102,26 @@ void run() {
 		Present();
 		Clear();
 
-		if (gioco.cont >= 12)
+		if (gioco.isTuttiCerchiEliminati())
 			ciclo = false;
 
 	}
 
-	int sbagliate = abs(giuste - MAX_CERCHI);
 
 	if (giuste >= 12) {
 		Clear();
-		DrawString(580, 200, "HAI VINTO", "Arial", 80, White, true);
+		DrawString(650, 200, "HAI VINTO", "Arial", 80, White, true);
 		Present();
+		Wait(1800);
+		CloseWindow();
 	}
 	else {
 		Clear();
-		DrawString(560, 200, "HAI PERSO", "Arial", 80, White, true);
-		DrawString(560, 200, "prova ancora", "Arial", 50, White, true);
+		DrawString(650, 200, "HAI PERSO", "Arial", 80, White, true);
+		DrawString(650, 300, "prova ancora", "Arial", 50, White, true);
 		Present();
+		Wait(1800);
+		CloseWindow();
 	}
 }
 
